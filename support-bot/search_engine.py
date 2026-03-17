@@ -1,7 +1,3 @@
-from endee import Endee
-
-db = Endee("support_db")
-
 def search_answer(query):
     with open("data.txt", "r") as f:
         faqs = f.readlines()
@@ -13,6 +9,6 @@ def search_answer(query):
             results.append(faq.strip())
 
     if not results:
-        return ["No exact match found, try another query"]
+        return ["Sorry, I couldn't find an exact answer. Please contact support."]
 
     return results[:2]
