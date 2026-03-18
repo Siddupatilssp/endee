@@ -63,7 +63,7 @@ User: password
 ## 📸 Screenshot
 
 ![App Screenshot](image.png)
-![App Screenshot](image2.png)
+![App Screenshot](image3.png)
 
 ---
 
