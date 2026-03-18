@@ -1,22 +1,40 @@
 import streamlit as st
 from search_engine import search_answer
 
+st.set_page_config(page_title="AI Support Chatbot", layout="wide")
+
 st.title("🤖 AI Customer Support Assistant")
 
-query = st.text_input("Ask your question")
+# Store chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display previous messages
+for msg in st.session_state.messages:
+    if msg["role"] == "user":
+        st.chat_message("user").write(msg["content"])
+    else:
+        st.chat_message("assistant").write(msg["content"])
+
+# User input
+query = st.chat_input("Type your question...")
 
 if query:
-    answers = search_answer(query)
-    
-    st.subheader("💡 AI Response")
-    
-    for ans in answers:
-        st.write("👉", ans)
+    # Save user message
+    st.session_state.messages.append({"role": "user", "content": query})
+    st.chat_message("user").write(query)
 
-    st.success("Answer generated using semantic search (Endee-based concept)")
-    st.sidebar.title("About")
-    
-    st.sidebar.info(
-    "This is an AI-powered customer support assistant using semantic search concepts. "
-    "Designed to reduce manual support workload."
+    # Get response
+    answers = search_answer(query)
+    response = " ".join(answers)
+
+    # Save bot response
+    st.session_state.messages.append({"role": "assistant", "content": response})
+    st.chat_message("assistant").write(response)
+
+# Sidebar
+st.sidebar.title("About")
+st.sidebar.info(
+    "AI-powered customer support chatbot using semantic search concepts. "
+    "Designed to automate and improve customer support experience."
 )

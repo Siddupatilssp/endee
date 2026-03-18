@@ -6,7 +6,21 @@ faqs = [
     "Refund is available within 7 days",
     "You can reset password using forgot password option",
     "We provide AI and software services",
-    "Contact us at support@company.com"
+    "Contact us at support@company.com",
+
+    # 🔥 NEW FAQs (add these)
+    "Our working hours are 9 AM to 6 PM Monday to Friday",
+    "You can update your profile from account settings",
+    "We support payments via credit card, debit card and UPI",
+    "Delivery usually takes 3 to 5 business days",
+    "You can cancel your order before it is shipped",
+    "We provide 24/7 customer support for urgent issues",
+    "You can track your order using tracking ID sent to your email",
+    "Account verification is required for security purposes",
+    "We ensure data privacy and do not share your information",
+    "Technical issues can be reported through support email",
+    "Subscription plans can be upgraded anytime",
+    "You can download invoices from your dashboard"
 ]
 
 # save data locally
